@@ -1,12 +1,8 @@
 use std::collections::HashSet;
 
 fn main() {
-    generate_coords();
-}
-
-fn generate_coords() {
-    let wire1_coords: HashSet<(i32, i32)> = calc(get_data_1());
-    let wire2_coords: HashSet<(i32, i32)> = calc(get_data_2());
+    let wire1_coords: HashSet<(i32, i32)> = calc_coords_for_input(get_data_1());
+    let wire2_coords: HashSet<(i32, i32)> = calc_coords_for_input(get_data_2());
 
     let mut dupes_abs: Vec<i32> = Vec::new();
 
@@ -17,7 +13,7 @@ fn generate_coords() {
     println!("{:?}", dupes_abs[0])
 }
 
-fn calc(data: Vec<String>) -> HashSet<(i32, i32)> {
+fn calc_coords_for_input(data: Vec<String>) -> HashSet<(i32, i32)> {
     let mut x = 0;
     let mut y = 0;
     let mut coord_set: HashSet<(i32, i32)> = HashSet::new();
